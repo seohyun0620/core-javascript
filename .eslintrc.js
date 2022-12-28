@@ -12,5 +12,7 @@ module.exports = {
         "sourceType": "module"
     },
     "rules": {
+        // 프로젝트에 적용
+        "no-unused-vars":'off'
     }
 }

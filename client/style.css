@@ -1,7 +1,35 @@
-h1{
-  display: flex;
+/* html{
+  background-color: yellow;
+  height: 300px;
+  body의 height를 100% 주면 중앙 정렬 됨
+} */
+body{
+  background-color: skyblue;
+  /* body height를 안주면 상식적으론 안칠해져야 맞는건데 
+  전체적으로 칠해짐->body 태그의 기본 속성 때문 */
+  height: 100vh;
+  /* height에 %를 주면 부모의 값을 고려해야함
+     height: 100%면 body의 부모인 html의 height를 기준으로 가져옴 */
+  /* 100vh는 현재 내가 보고있는 화면의 크기를 기준 */
+  /* display: flex;{red,0}
   flex-flow: row nowrap;
-  align-items: center;
-  justify-items: center;
-
+  justify-content: center;
+  align-items: center; */
+  /* justify-items: center; 
+  예를들어 justify-items 속성은 제안된 스펙은 존재하지만, 
+  공식적으로 지원하지는 않는 것으로 알고 있습니다.*/
+  position: relative;
+}
+/* h1{
+} */
+div{
+  background: gold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+/* 위쪽 기준 50% 아래, 50% 왼쪽 에서 div태그를 랜더링\->왼쪽상단이 중앙에 배치 됨
+  transform때문에 
+  본인 div태그의 width값 절반 만큼 마이너스 x축 방향으로 이동하고 ,
+  본인 height값의 절반 만큼 마이너스 y방향으로 이동해라 */
 }
