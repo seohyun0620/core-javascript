@@ -13,6 +13,7 @@ module.exports = {
     },
     "rules": {
         // 프로젝트에 적용
-        "no-unused-vars":'off'
+        "no-unused-vars":'off',
+        "no-undef":'off' //좋은 방법x
     }
 }

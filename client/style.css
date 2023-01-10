@@ -20,9 +20,7 @@ body{
   공식적으로 지원하지는 않는 것으로 알고 있습니다.*/
   position: relative;
 }
-/* h1{
-} */
-div{
+  h1{
   background: gold;
   position: absolute;
   top: 50%;
