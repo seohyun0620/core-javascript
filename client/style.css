@@ -31,3 +31,39 @@ body{
   본인 div태그의 width값 절반 만큼 마이너스 x축 방향으로 이동하고 ,
   본인 height값의 절반 만큼 마이너스 y방향으로 이동해라 */
 }
+.ground{
+  width: 600px;
+  height: 400px;
+  background: greenyellow;
+  border: 10px solid black;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+.ball{
+  transition: all .3s;
+  pointer-events: none;
+  /* 클릭이 안되도록 만듦 */
+}
+.visual{
+  padding: 1.5rem;
+  background-color: dodgerblue;
+}
+.news{
+  padding: 1rem;
+  background-color: orange;
+}
+.desc{
+  padding: 1rem;
+  background-color: hotpink;
+}
+.pop{
+  width:30vw;
+  height:30vw;
+  position: absolute;
+  left:1rem;
+  top:1rem;
+  background-color: rgba(0,0,0,0.5);
+  display:none;
+}
