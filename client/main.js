@@ -1,3 +1,4 @@
+/* global gsap */
 
 import { 
   clearContents,
@@ -36,6 +37,7 @@ function clickSubmitHandler(e){
     },1000); */
     return
   }
+
   if (isNumericString(name)) {
     console.log('제대로된 이름을 입력해주세요.');
     gsap.fromTo(resultArea, 0.01, {x:-5}, {x:5, clearProps:"x", repeat:20})
@@ -47,8 +49,8 @@ function clickSubmitHandler(e){
 }
 
   //클릭하면 내 컴터에 복사 됨
-function clickCopyHandler(){
-  let text = resultArea.textContent;
+  function clickCopyHandler(){
+    let text = resultArea.textContent;
   // navigator.clipboard.writeText(text);
 
   //promis copy가 완벽하게 되면 then을 실행해줘
@@ -59,4 +61,3 @@ function clickCopyHandler(){
 
 submit.addEventListener('click', clickSubmitHandler);
 resultArea.addEventListener('click', clickCopyHandler);
-
