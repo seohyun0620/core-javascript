@@ -12,5 +12,6 @@ module.exports = {
         "sourceType": "module"
     },
     "rules": {
+        "no-unused-vars":"warn" //사용하지않는 변수에 워닝을 띄움
     }
 }
