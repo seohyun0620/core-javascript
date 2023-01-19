@@ -56,8 +56,8 @@ xhr.send(JSON.stringify(body)); //서버에 요청을 보냄 (open이랑 세트)
     console.error(err);
   }
 }) */
-// shorthand property
 
+// shorthand property
 xhrData.get = (url,onSuccess,onFail) =>{
   xhrData({
     url,

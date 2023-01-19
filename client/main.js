@@ -1,24 +1,52 @@
-import { 
+/* global gsap */
+import {
+/*   xhrData,
+  xhrPromise, */
+  tiger,
+  delayP,
+  getNode,
   insertLast,
-  xhrData,
-  xhrPromise } from "./lib/index.js";
+  changeColor,
+  renderSpinner,
+  renderUserCard
+} from "./lib/index.js";
 
-  xhrPromise
-.get('https://jsonplaceholder.typicode.com/users/1')
-.then((res)=>{
-  insertLast(document.body,JSON.stringify(res));
-})
-.catch((err)=>{
-  console.log(err);
-})
+//유저 카드 생성
+//생성된 카드로 랜더링
 
-/* xhrData.get(
-  'https://jsonplaceholder.typicode.com/users/1',
-  (res) =>{
-    insertLast('body',JSON.stringify(res));
-  },
-  (err)=>{
-    insertLast('body','데이터 로딩이 실패했습니다.');
-  }
-)
- */
+//userList.js에서 renderUserCard함수 만들고 만들어진 함수 안에
+//createUserCard를 던지고, renderUserCard함수를 사용했을 때 렌더링이 잘 되게
+
+const userCardContainer=getNode('.user-card-inner');
+
+async function rendingUserList(){
+  
+  renderSpinner(userCardContainer)
+
+  try{
+    await delayP(2100)
+    getNode('.loadingSpinner').remove();
+
+  let response=await tiger.get('https://jsonplaceholder.typicode.com/users')
+  
+  let userData=response.data;
+  //console.log(userData);
+
+  //forEach는 순환목적이라서 return 필요 없음
+  userData.forEach((data)=>renderUserCard(userCardContainer,data));
+
+  //console.log(gsap.utils.toArray('.user-card'));
+  changeColor('.user-card');
+  gsap.to(gsap.utils.toArray('.user-card'),{
+    x:0,
+    opacity:1,
+    duration:1.5,
+    stagger:0.2,
+  })
+}catch(err){
+console.log(err);
+}
+}
+
+
+rendingUserList();
